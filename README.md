@@ -5,37 +5,53 @@ Class: DevOps
 
 ## Background
 
-Previously companies preferred to apply monolithic architecture, where the entire application operates as a single, self-contained unit. However, a drawback of this approach is that it often consumes all available resources. Nowadays, microservices have gained popularity, with examples like Github successfully transitioning from a monolithic to a microservices architecture. In microservice architecture, applications are divided into smaller, independent services, allowing teams to collaborate more effectively and preventing the entire application from collapsing. In response to the microservice, the cloud computing becomes pervailing also. According to research and markets website, the global cloud computing is expected to value $832 billion through 2025. Meanwhile, 451 Rsearch shows that 90 percent of origanizations somehow obtain cloud capacity. Moreover, Kubernetes plays an important role for microservice architecture. In addition, most of devops suffered from human error when they experienced manual processes. HashiCorp co-founder Armon Dagdar introduced how the infrastructure as code handle this problem. Infrastructure-as-Code also offer benefits such as consistent configuration and improved accountability with cloud-native development. This shift highlights a gap between monolithic architecture and real-world projects. To bridge this gap, we will introduce the specific benefits of cloud computing in the following section, followed by discussions on Docker and Kubernetes in the subsequent sections. Finally, we will explain how we apply terraform to fulfill the Infrastructure-as-Code.
+Previously, companies predominantly used monolithic architecture, where the entire application operated as a single, self-contained unit. However, a significant drawback of this approach is that it often consumes excessive resources. In contrast, microservices architecture has gained popularity, with examples like GitHub successfully transitioning from monolithic to microservices. In a microservices architecture, applications are divided into smaller, independent services, enabling teams to collaborate more effectively and reducing the risk of a single point of failure.
 
-Nowaday, more and more companies choose to use the cloud computing. IBM has elaborated a couple of merits, when companies select cloud computing. IBM states that cloud computing is more flexible, efficiency and strategic value in comparison with the monolithic architecture.
+The rise of microservices has also fueled the growth of cloud computing. According to Research and Markets, the global cloud computing market is expected to reach $832 billion by 2025. Additionally, a report from 451 Research indicates that 90% of organizations utilize cloud capacity in some form. Kubernetes, a key enabler of microservices, has become a cornerstone technology in this architecture.
 
-Kubernetes is a key platform in microservices architecture. Docker primarily focuses on containerization, providing lightweight, portable, and isolated environments for applications. It simplifies deployment, distribution, and runtime operations. On the other hand, Kubernetes specializes in orchestration, automatically deploying and scaling containerized applications while ensuring high availability. This characteristic enhances the reliability and availability of our application.
+Meanwhile, many DevOps teams have struggled with human errors caused by manual processes. HashiCorp co-founder Armon Dadgar highlighted how Infrastructure-as-Code (IaC) addresses these challenges. IaC provides benefits such as consistent configuration and improved accountability, especially in cloud-native development. This shift underscores the gap between monolithic architectures and modern, real-world projects. To bridge this gap, we will explore the specific benefits of cloud computing, followed by discussions on Docker and Kubernetes. Finally, we will demonstrate how Terraform can be applied to achieve Infrastructure-as-Code.
 
-In addition, infrastructure-as-code is a promising alternative to managing large-scale, distributed system, cloud-native applications and microservice architectures.
+Nowadays, more companies are adopting cloud computing due to its numerous benefits. IBM highlights key advantages, emphasizing cloud computing's flexibility, efficiency, and strategic value compared to monolithic architecture.
+
+Cloud computing features such as scalability and storage options offer unmatched flexibility. For example, it enables businesses to easily scale IT solutions compared to the constraints of traditional hardware setups. Cloud computing also allows users to access services from anywhere at any time. As a Zoho expert noted:
+
+    "Who wants to be constrained to a physical piece of hardware when we could be accessing work from the beach, a peaceful park, or the appointment waiting room you quickly zipped to on your lunch break?"
+
+Furthermore, cloud computing replaces large one-time costs with a pay-as-you-go model, enhancing financial efficiency. IBM also argues that cloud computing streamlines workflows and fosters collaboration, making it easier for teams to work together effectively.
+
+Kubernetes is a crucial platform in microservices architecture. While Docker focuses on containerization—providing lightweight, portable, and isolated environments for applications—Kubernetes specializes in orchestrating these containers. It automates deployment, scaling, and management of containerized applications, ensuring high availability and enhancing application reliability.
+
+Infrastructure-as-Code (IaC) offers a promising alternative for managing large-scale distributed systems, cloud-native applications, and microservices architectures. Traditional DevOps practices often involve scaling up during peak demand and scaling down at off-peak times to save costs. These manual processes, however, are prone to human errors.
+
+By codifying infrastructure and automating its management, organizations can avoid manual mistakes during scaling processes, track infrastructure changes for traceability and issue resolution, and achieve greater efficiency compared to manual configurations. Running Infrastructure-as-Code as a script creates a solid foundation for development, security, QA, and testing teams. With consistent iteration and automation, IaC supports productive workflows and minimizes errors.
 
 ## Research Purpose
 
-The project aims to develop a cloud-based hotel application, incorporating several macroservices such as user login, hotel booking, and payment processing.
+The project focuses on developing infrastructure using Terraform. The infrastructure is divided into two main components:
 
-## Planing
+    Istio Gateway:
+    In the istio folder, the namespace for the Istio Gateway is defined, and the gateway is generated. Within the Istio Gateway configuration, HTTP routes are set up alongside rate-limiting policies to control traffic effectively.
 
-To achieve the research objectives, we will develop a comprehensive hotel application comprising three microservices: user login, hotel booking, and payment processing.
+    Kubernetes Pod:
+    The second component is a Kubernetes pod that includes a virtual machine and an SQL database. This setup ensures a reliable and scalable environment for managing applications and their data.
 
 ### Blueprint
 
 ![Blueprint](https://miro.com/app/board/uXjVLDTQ2CM=/?moveToWidget=3458764607442400329&cot=14)
 
-### Istio-gateway
-
-### Microservice
-
 ## Deployment
+
+    'minikube start'
 
     ``` 
     terraform init
     terraform plan
     terraform apply
     ```
+
+### Istio-gateway
+
+### Microservice
 
 ## Methods
 
@@ -45,4 +61,13 @@ To achieve the research objectives, we will develop a comprehensive hotel applic
 
 - Terraform (IoC): By means of terraform, we are able to define and provide data center infrastructure using a declarative configuration language.
 
-- Istio: load balancing and rate limiter
+- Istio-gateway: load balancing and rate limiter
+
+## Reference
+
+1. https://www.ibm.com/topics/cloud-computing-benefits
+2. https://www.zoho.com/en-au/tech-talk/why-is-the-cloud-so-popular.html
+3. https://sam-solutions.us/insights/why-cloud-computing-is-important-for-business/
+4. https://www.researchandmarkets.com/report/cloud-platform?utm_source=GNOM&utm_medium=PressRelease&utm_code=8vg2fl&utm_campaign=1428189+-+Cloud+Computing+Industry+to+Grow+from+%24371.4+Billion+in+2020+to+%24832.1+Billion+by+2025%2c+at+a+CAGR+of+17.5%25&utm_exec=joca220prd
+5. https://duplocloud.com/blog/infrastructure-as-code-benefits/
+6. https://www.hashicorp.com/resources/what-is-infrastructure-as-code
