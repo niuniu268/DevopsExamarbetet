@@ -37,7 +37,7 @@ The project focuses on developing infrastructure using Terraform. The infrastruc
 
 ### Blueprint
 
-![Blueprint](https://miro.com/app/board/uXjVLDTQ2CM=/?moveToWidget=3458764607442400329&cot=14)
+![Blueprint](https://github.com/niuniu268/DevopsExamarbetet/blob/master/Img/Screenshot%202024-11-19%20at%2004.45.26.png?raw=true)
 
 ## Deployment
 
