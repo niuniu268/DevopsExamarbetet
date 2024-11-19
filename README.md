@@ -5,13 +5,13 @@ Class: DevOps
 
 ## Background
 
-Previously companies prefer to apply monolithic architecture, where the entire application operates as a single, self-contained unit. However, a drawback of this approach is that it often consumes all available resources. Nowadays, microservices have gained popularity, with examples like Github successfully transitioning from a monolithic to a microservices architecture. In microservice architecture, applications are divided into smaller, independent services, allowing teams to collaborate more effectively and preventing the entire application from collapsing. In response to the microservice, the clouc computing becomes pervailing also.IBM has elaborated a number of merits, when companies select cloud computing. Moreover, Kubernetes plays an important role for microservice architecture. In addition, most of devops suffered from human error when they experienced manual processes. HashiCorp co-founder Armon Dagdar introduced how the infrastructure as code handle this problem. Infrastructure-as-Code also offer benefits such as consistent configuration and improved accountability with cloud-native development. This shift highlights a gap between monolithic architecture and real-world projects. To bridge this gap, we will introduce the specific benefits of cloud computing in the following section, followed by discussions on Docker and Kubernetes in the subsequent sections. Finally, we will explain how we apply terraform to fulfill the Infrastructure-as-Code.
+Previously companies preferred to apply monolithic architecture, where the entire application operates as a single, self-contained unit. However, a drawback of this approach is that it often consumes all available resources. Nowadays, microservices have gained popularity, with examples like Github successfully transitioning from a monolithic to a microservices architecture. In microservice architecture, applications are divided into smaller, independent services, allowing teams to collaborate more effectively and preventing the entire application from collapsing. In response to the microservice, the cloud computing becomes pervailing also. According to research and markets website, the global cloud computing is expected to value $832 billion through 2025. Meanwhile, 451 Rsearch shows that 90 percent of origanizations somehow obtain cloud capacity. Moreover, Kubernetes plays an important role for microservice architecture. In addition, most of devops suffered from human error when they experienced manual processes. HashiCorp co-founder Armon Dagdar introduced how the infrastructure as code handle this problem. Infrastructure-as-Code also offer benefits such as consistent configuration and improved accountability with cloud-native development. This shift highlights a gap between monolithic architecture and real-world projects. To bridge this gap, we will introduce the specific benefits of cloud computing in the following section, followed by discussions on Docker and Kubernetes in the subsequent sections. Finally, we will explain how we apply terraform to fulfill the Infrastructure-as-Code.
 
+Nowaday, more and more companies choose to use the cloud computing. IBM has elaborated a couple of merits, when companies select cloud computing. IBM states that cloud computing is more flexible, efficiency and strategic value in comparison with the monolithic architecture.
 
+Kubernetes is a key platform in microservices architecture. Docker primarily focuses on containerization, providing lightweight, portable, and isolated environments for applications. It simplifies deployment, distribution, and runtime operations. On the other hand, Kubernetes specializes in orchestration, automatically deploying and scaling containerized applications while ensuring high availability. This characteristic enhances the reliability and availability of our application.
 
-Both Docker and Kubernetes are key platforms in microservices architecture. Docker focuses on containerization, providing lightweight, portable, and isolated environments for applications. It simplifies deployment, distribution, and runtime operations. On the other hand, Kubernetes specializes in orchestration, automatically deploying and scaling containerized applications while ensuring high availability. This characteristic enhances the reliability and availability of our application.
-
-While web services offer advantages like cross-platform compatibility and effectiveness, we plan to utilize HarmonyOS Next as our front-end technology. According to Huawei, HarmonyOS apps deliver better performance and responsiveness compared to web services. They also have access to hardware features like sensors, GPS, and cameras, allowing for the development of more functional applications. Additionally, HarmonyOS apps can work offline by storing data locally, ensuring users can access essential features even in poor network conditions.
+In addition, infrastructure-as-code is a promising alternative to managing large-scale, distributed system, cloud-native applications and microservice architectures.
 
 ## Research Purpose
 
@@ -29,17 +29,20 @@ To achieve the research objectives, we will develop a comprehensive hotel applic
 
 ### Microservice
 
-### Between Istio-gateway and Microservice
-
-- Each microservice has its own database, and Nacos facilitates communication between them.
-- Load balancing among microservices ensured by Nginx.
-
 ## Deployment
+
+    ``` 
+    terraform init
+    terraform plan
+    terraform apply
+    ```
 
 ## Methods
 
 - Kubernetes: scalable, resilient, and automated infrastructure environments in cloud environments
 
-- Terraform (IoC): 
+- Minikube: minikube is local Kubernetes. The advantage of minikube is that it is easy to learn and develop for Kubernetes.
 
-- Istio: load balancing and reverse proxying: 
+- Terraform (IoC): By means of terraform, we are able to define and provide data center infrastructure using a declarative configuration language.
+
+- Istio: load balancing and rate limiter
