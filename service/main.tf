@@ -1,6 +1,9 @@
 resource "kubernetes_namespace" "app_namespace" {
   metadata {
     name = var.namespace
+    labels = {
+      istio-injection = "enabled"
+    }
   }
 }
 
@@ -158,11 +161,10 @@ resource "kubernetes_service" "mysql_service" {
       target_port = 3306
     }
 
-    cluster_ip = "None"  # Headless service
+    cluster_ip = "None" 
   }
 }
 
-# Deploy Ubuntu VM equivalent
 resource "kubernetes_deployment" "ubuntu_vm" {
   metadata {
     name      = "ubuntu-vm"
@@ -245,7 +247,7 @@ resource "kubernetes_config_map" "coredns_custom" {
   }
 
   data = {
-    "my-application.server" = <<-EOF
+    "service.server" = <<-EOF
       ${var.namespace}.svc.cluster.local:53 {
           errors
           cache 30
