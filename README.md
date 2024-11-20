@@ -51,7 +51,19 @@ The second component is a Kubernetes pod that includes a virtual machine and an 
 
 ### Istio-gateway
 
+After applying istio-gateway, the minikube shows the configuration works well.
+
+![Result1](https://github.com/niuniu268/DevopsExamarbetet/blob/master/Img/Screenshot%20from%202024-11-20%2006-49-53.png?raw=true)
+
+Log file show: 
+
+![Result2](https://github.com/niuniu268/DevopsExamarbetet/blob/master/Img/Screenshot%20from%202024-11-20%2006-50-21.png?raw=true)
+
 ### Microservice
+
+Checking the situation of the microservices, it shows that the endpoint is exposed.
+
+![Result3](https://github.com/niuniu268/DevopsExamarbetet/blob/master/Img/Screenshot%20from%202024-11-20%2007-02-40.png?raw=true)
 
 ## Methods
 
@@ -59,7 +71,7 @@ The second component is a Kubernetes pod that includes a virtual machine and an 
 
 - Minikube: minikube is local Kubernetes. The advantage of minikube is that it is easy to learn and develop for Kubernetes.
 
-- Terraform (IoC): By means of terraform, we are able to define and provide data center infrastructure using a declarative configuration language.
+- Terraform (IaC): By means of terraform, we are able to define and provide data center infrastructure using a declarative configuration language.
 
 - Istio-gateway: load balancing and rate limiter
 
