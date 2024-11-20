@@ -29,11 +29,11 @@ By codifying infrastructure and automating its management, organizations can avo
 
 The project focuses on developing infrastructure using Terraform. The infrastructure is divided into two main components:
 
-    Istio Gateway:
-    In the istio folder, the namespace for the Istio Gateway is defined, and the gateway is generated. Within the Istio Gateway configuration, HTTP routes are set up alongside rate-limiting policies to control traffic effectively.
+Istio Gateway:
+In the istio folder, the namespace for the Istio Gateway is defined, and the gateway is generated. Within the Istio Gateway configuration, HTTP routes are set up alongside rate-limiting policies to control traffic effectively.
 
-    Kubernetes Pod:
-    The second component is a Kubernetes pod that includes a virtual machine and an SQL database. This setup ensures a reliable and scalable environment for managing applications and their data.
+Kubernetes Pod:
+The second component is a Kubernetes pod that includes a virtual machine and an SQL database. This setup ensures a reliable and scalable environment for managing applications and their data.
 
 ### Blueprint
 
